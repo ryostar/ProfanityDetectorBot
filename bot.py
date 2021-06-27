@@ -39,7 +39,7 @@ async def check_if_admin(message):
 async def start_msg(event):
     sender = await bot.get_entity(event.sender_id)
     await event.reply(
-        f"Hi {sender.first_name}!\nI am a profanity detector bot.\n\nMake me admin in your group with `delete messages` permission and I'll delete messsages containing abuses!",
+        f"Hi {sender.first_name}!\nTôi là một bot phát hiện ngôn từ tục tĩu.\n\nĐặt tôi làm quản trị viên trong nhóm của bạn với quyền `xóa tin nhắn` và tôi sẽ xóa các tin nhắn có chứa nội dung lạm dụng!",
         buttons=[
             [Button.inline("Help 🆘", data="helpme")],
             [
@@ -49,9 +49,9 @@ async def start_msg(event):
                 )
             ],
             [
-                Button.url("📥 Channel", url="https://t.me/BotzHub"),
+                Button.url("📥 Channel", url="https://t.me/Kenhsex"),
                 Button.url(
-                    "Package 📦", url="https://pypi.org/project/ProfanityDetector/"
+                    "Admin 📦", url="https://t.me/cunongdan"
                 ),
             ],
         ],
@@ -62,7 +62,7 @@ async def start_msg(event):
 async def start_grp(event):
     sender = await bot.get_entity(event.sender_id)
     await event.reply(
-        f"Hey {sender.first_name}!\n__I'm up, protecting this group!__\n**False positives?** Report them to @BotzHubChat!"
+        f"Hey {sender.first_name}!\n__Tôi đứng lên, bảo vệ nhóm này!__\n**Dương tính giả?** Báo cáo họ với @cunongdan!"
     )
 
 
@@ -71,12 +71,12 @@ async def helper_(event):
     sender = await bot.get_entity(event.sender_id)
     await event.edit(
         f"""
-{sender.first_name}, here is the help menu.\n
+{sender.first_name}, đây là menu trợ giúp.\n
 **How to use?**
-- Add me to a group, and make me admin, with \"delete messages\" permission.
-- If the bot is not admin, it will not be deleting messages containing blacklisted words.\n
-**Report False Positives:**
-- You are free to report False detections in @BotzHubChat.""",
+- Thêm tôi vào một nhóm và đặt tôi làm quản trị viên, với quyền \"delete messages\" .
+- Nếu bot không phải là quản trị viên, nó sẽ không xóa các tin nhắn chứa các từ nằm trong danh sách đen.\n
+**Báo cáo khẳng định sai:**
+- Bạn có thể tự do báo cáo Phát hiện sai trong @cunongdan.""",
         buttons=[[Button.inline("Back", data="start")]],
     )
 
